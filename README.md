@@ -26,7 +26,14 @@ Built 3 test probes:
 Most attacks across all three bots lean on an "it's just a game / pretend / for a kid" framing, attempting to get the bot to either (a) leak its system prompt verbatim, or (b) treat its safety rules as suspended during roleplay. In response to these findings, I hardened the actual system prompts (`financebot.txt`, `medibot.txt`) with explicit anti-roleplay clauses — this was the workshop's "Fix it" hackathon challenge.
 
 ## Supporting Tooling
-`scripts/chat.js` — a manual REPL for chatting directly against any bot's system prompt via Groq models (70b/8b/gptoss), used for eyeballing behavior outside the automated eval suite.
+`scripts/chat.js` — a manual REPL I built (new, untracked in the original repo) for chatting directly against any bot's system prompt via Groq models (70b/8b/gptoss), used for eyeballing behavior outside the automated eval suite.
+
+**Usage:**
+```
+node scripts/chat.js <bot-name>
+```
+For example: `node scripts/chat.js mybot` (HRBot), `node scripts/chat.js financebot`, or `node scripts/chat.js medibot`.
+
 
 ---
 
